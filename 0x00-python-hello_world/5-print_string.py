@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 str = "Holberton School"
-# YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
+print("{:s}{:s}{:s}\n{:s}".format(str, str, str, str[:10]))
