@@ -3,4 +3,4 @@ def islower(c):
     if c >= 'a' and c <= 'z':
         return True
     else:
-        False
+        return False
