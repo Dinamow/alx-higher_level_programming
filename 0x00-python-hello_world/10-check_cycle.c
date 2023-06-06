@@ -2,8 +2,9 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *temp;
+	listint_t *temp, *reset;
 	temp = list;
+	reset = list;
 	list = list->next;
 	while(list)
 	{
@@ -12,5 +13,6 @@ int check_cycle(listint_t *list)
 			return (1);
 		temp = temp->next;
 	}
+	list = reset;
 	return (0);
 }
