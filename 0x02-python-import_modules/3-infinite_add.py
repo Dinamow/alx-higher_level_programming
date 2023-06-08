@@ -11,5 +11,3 @@ if __name__ == "__main__":
             loop += 1
             i += int(sys.argv[loop])
         print("{:d}".format(i))
-            
-
