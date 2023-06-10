@@ -6,6 +6,6 @@ idx = 3
 new_element = 9
 new_list = new_in_list(my_list, idx, new_element)
 
-print(new_in_list(my_list, 100, 10))
+print(new_in_list(my_list, 5, 10))
 print(new_list)
 print(my_list)
