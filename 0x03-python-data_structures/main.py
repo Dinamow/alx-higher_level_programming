@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-print_matrix_integer = __import__('6-print_matrix_integer').print_matrix_integer
+new_in_list = __import__('4-new_in_list').new_in_list
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+my_list = [1, 2, 3, 4, 5]
+idx = 3
+new_element = 9
+new_list = new_in_list(my_list, idx, new_element)
 
-print_matrix_integer(matrix)
-print("--")
-print_matrix_integer()
-
+print(new_in_list(my_list, 100, 10))
+print(new_list)
+print(my_list)
