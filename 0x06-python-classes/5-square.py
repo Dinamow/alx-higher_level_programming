@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """this is calsses file"""
 
+
 class Square:
     """this is square calll"""
 
@@ -17,7 +18,7 @@ class Square:
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
         if size < 0:
-             raise ValueError('size must be >= 0')
+            raise ValueError('size must be >= 0')
         self.__size = int(size)
 
     def area(self):
@@ -31,7 +32,7 @@ class Square:
             the area of square
         """
         return self.__size ** 2
-    
+
     def my_print(self):
         """
         this is print func
@@ -61,4 +62,3 @@ class Square:
         if value < 0:
             raise ValueError('size must be >= 0')
         self.__size = value
-
