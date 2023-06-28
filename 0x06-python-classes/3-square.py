@@ -6,7 +6,7 @@ class Square:
     """this is the suqare class"""
     def __init__(self, size=0):
         """
-        this gets the size 
+        this gets the size
         Args:
             self: self arg
             size: size arg
