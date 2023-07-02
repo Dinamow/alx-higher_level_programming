@@ -1,0 +1,45 @@
+the module ``2-matrix_divided``
+===============================
+
+using ``matrix_divided
+----------------------
+
+This file is considerd in reStructuredText format.
+First import ``matrix_divided`` from the ``2-matrix_divided`` module:
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix_divided([[1, 2, "asd"], [1, 2, 3], [1, 2, 3]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2],[1, 2]], 2)
+[[0.5, 1.0], [0.5, 1.0]]
+
+>>> matrix_divided([], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[1, 2, 4, 2], [1, 2, 3], [1, 2, 3, 2, 3]], 2)
+Traceback (most recent call last):
+	...
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided([[2, 3], 12, [1, 2, 3]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[2, 3], [1, 2, 3]], 0)
+Traceback (most recent call last):
+	...
+ZeroDivisionError: division by zero
+	
+>>> matrix_divided(None, 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2, 3], [3, 4, 5], [5, 6, 7]], 4)
+[[0.25, 0.5, 0.75], [0.75, 1.0, 1.25], [1.25, 1.5, 1.75]]
