@@ -26,7 +26,7 @@ class Rectangle(object):
 
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
-            return
+            return '\n'
         else:
             return ('#'*self.__width+'\n')*(self.__height-1)+('#'*self.__width)
 
