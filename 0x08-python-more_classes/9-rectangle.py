@@ -89,5 +89,5 @@ class Rectangle(object):
         Rectangle.__width = size
         Rectangle.__heigh = size
         if cls.size == 0:
-            return 0
+            return ''
         return cls(size, size)
