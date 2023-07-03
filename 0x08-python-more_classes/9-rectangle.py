@@ -78,6 +78,7 @@ class Rectangle(object):
             return rect_1
         else:
             return rect_2
+    
     @classmethod
     def square(cls, size=0):
         if not isinstance(size, int) or isinstance(size, bool):
