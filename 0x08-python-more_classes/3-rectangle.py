@@ -20,8 +20,15 @@ class Rectangle(object):
         return self.__width * self.__height
 
     def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return (self.__width + self.__height) * 2
 
+    def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return 
+        else:
+            return (('#' * self.__width) + '\n') * self.__height
     @property
     def height(self):
         return self.__height
