@@ -29,10 +29,11 @@ class Rectangle(object):
         return (self.__width + self.__height) * 2
 
     def __str__(self):
+        a = self.print_symbol
         if self.__width == 0 or self.__height == 0:
             return ''
         else:
-            return str((self.print_symbol*self.__width+'\n')*(self.__height-1)+(self.print_symbol*self.__width))
+            return (a*self.__width+'\n')*(self.__height-1)+(a*self.__width)
 
     def __repr__(self):
         return 'Rectangle('+str(self.__width)+', '+str(self.__height)+')'
