@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-matrix = [
-    [1, 2, 3, 4],
-    [1, 2, 3, 4], 5
-]
-a = 'aaaa'
 
-lenth = len(matrix)
-for x in range(lenth):
-    if not isinstance(matrix[x], list) or len(matrix[x]) == 0:  
-        raise TypeError(a)
+def hello(name):
+    if name == None or name == False:
+        print ('lol')
+    print('hello', name)
+
+
+hello("ahmed")
+hello()

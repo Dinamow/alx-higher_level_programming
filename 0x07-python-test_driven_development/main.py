@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-matrix_divided = __import__('2-matrix_divided').matrix_divided
+max_integer = __import__('6-max_integer').max_integer
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-print(matrix_divided(matrix, 3))
-print(matrix)
+print(max_integer([1, 2, 3, 4]))
+print(max_integer([1, 3, 4, 2]))
