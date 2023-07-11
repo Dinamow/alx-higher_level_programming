@@ -6,4 +6,4 @@ import json
 def save_to_json_file(my_obj, filename):
     """this is the func"""
     with open(filename, mode='w') as file:
-        json.dump(my_obj, file, indent=4)
+        return json.dump(my_obj, file, indent=4)
