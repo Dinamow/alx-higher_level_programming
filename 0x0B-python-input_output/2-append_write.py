@@ -4,5 +4,5 @@
 
 def append_write(filename="", text=""):
     """this is func"""
-    with open(filename, mode='a', encoding='utf-8') as file:
+    with open(filename, mode='a+', encoding='utf-8') as file:
         return file.write(text)
