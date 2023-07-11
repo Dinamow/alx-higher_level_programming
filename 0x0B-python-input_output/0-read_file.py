@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """this is func file"""
-import os
 
 
 def read_file(filename=""):
