@@ -14,5 +14,5 @@ class Rectangle(BaseGeometry):
     def area(self):
         return self.__width * self.__height
     
-    def __str__(slef):
+    def __str__(self):
         return '[Rectangle] {:d}/{:d}'.format(self.__width, self.__height)
