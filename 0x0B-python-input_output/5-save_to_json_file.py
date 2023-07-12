@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+"""this is func file"""
 import json
-""" this is func file"""
+""" this is module"""
 
 
 def save_to_json_file(my_obj, filename):
