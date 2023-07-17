@@ -141,6 +141,7 @@ class test_rectangle(unittest.TestCase):
             r = Rectangle(10, 2)
             r.y = -10
 
+
 class Test_area_rect(unittest.TestCase):
     """test_area"""
     def test_area(self):
@@ -365,4 +366,4 @@ class Test_load_From_file(unittest.TestCase):
             self.assertEqual(type(my_list_loaded[i]), type(my_list[i]))
             self.assertEqual(my_list[i].to_dictionary(),
                              my_list_loaded[i].to_dictionary())
-        os.remove("Rectangle.json").y = -10
+        os.remove("Rectangle.json")
