@@ -163,4 +163,3 @@ class Rectangle(Base):
                 elif kwargs["y"] < 0:
                     raise ValueError("y must be >= 0")
                 self.__y = kwargs["y"]
-
