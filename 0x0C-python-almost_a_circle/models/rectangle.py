@@ -8,6 +8,7 @@ class Rectangle(Base):
     __nb_num = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """this is init func"""
         if id is None:
             type(self).__nb_num += 1
             self.id = type(self).__nb_num
@@ -36,32 +37,40 @@ class Rectangle(Base):
 
         @property
         def width(self):
+            """this is getter func"""
             return self.__width
 
         @width.setter
         def width(self, value):
+            """this is setter func"""
             self.__width = value
 
         @property
         def height(self):
+            """this is getter func"""
             return self.__height
 
         @height.setter
         def height(self, value):
+            """this is setter func"""
             self.__height = value
 
         @property
         def x(self):
+            """this is getter func"""
             return self.__x
 
         @x.setter
         def x(self, value):
+            """this is setter func"""
             self.__x = value
 
         @property
         def y(self):
+            """this is getter func"""
             return self.__y
 
         @y.setter
         def y(self, value):
+            """this is setter func"""
             self.__y = value
