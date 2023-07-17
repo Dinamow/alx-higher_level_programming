@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""this is calss file"""
 from models.base import Base
+"""this is the file"""
 
 
 class Rectangle(Base):
