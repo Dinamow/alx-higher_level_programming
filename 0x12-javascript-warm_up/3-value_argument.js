@@ -1,12 +1,10 @@
 #!/usr/bin/node
 
-const args = process.argv.slice(2);
-x = 0;
-for (y in args) {
-  x++;
+const args = process.argv;
+let massage = 'No argument';
+
+if (args[2]) {
+  massage = args[2];
 }
-if (x === 0) {
-  console.log('No argument');
-} else {
-  console.log(args[0]);
-}
+
+console.log(massage);
