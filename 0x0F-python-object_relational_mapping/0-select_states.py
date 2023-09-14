@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     cursor.execute("SELECT * FROM states")
 
-    m = cursor.fetchone()
+    m = cursor.fetchall()
 
     for i in m:
         print(i)
