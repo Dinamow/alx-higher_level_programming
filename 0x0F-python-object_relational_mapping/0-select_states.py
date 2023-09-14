@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     cursor = db_connection.cursor()
 
-    cursor.execute("SELECT * FROM states")
+    cursor.execute("SELECT * FROM states ORDER BY states.id")
 
     m = cursor.fetchall()
 
