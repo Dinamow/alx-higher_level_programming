@@ -17,6 +17,6 @@ if __name__ == "__main__":
     m = cursor.fetchall()
 
     for i in m:
-        print(i)
+        print(f"{i}")
 
     db_connection.close()
