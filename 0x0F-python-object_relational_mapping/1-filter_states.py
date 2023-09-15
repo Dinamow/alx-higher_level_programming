@@ -5,7 +5,7 @@ if __name__ == "__main__":
     import sys
 
     args = sys.argv
-    s = "WHERE name LIKE 'N%' ORDER BY id"
+    s = "WHERE name LIKE 'N%' ORDER BY id ASC"
 
     db_connection = MySQLdb.connect(host="localhost", port=3306,
                                     user=args[1], password=args[2], db=args[3])
