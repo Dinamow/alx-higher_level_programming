@@ -6,8 +6,6 @@ if __name__ == "__main__":
 
     args = sys.argv
 
-    if len(args) < 4:
-        exit
     db_connection = MySQLdb.connect(host="localhost", port=3306,
                                     user=args[1], password=args[2], db=args[3])
 
