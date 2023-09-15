@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     args = sys.argv
     db_connection = MySQLdb.connect(host="localhost", port=3306,
-                                    user=args[1], password="password", db=args[3])
+                                    user=args[1], password=args[2], db=args[3])
 
     cursor = db_connection.cursor()
     a = f"SELECT states.id FROM states WHERE states.name = '{args[4]}'"
@@ -16,5 +16,5 @@ if __name__ == "__main__":
 
     for i in m:
         print(f"{i[0]}", end="\n" if m[-1][0] == i[0] else ", ")
-    
+
     db_connection.close()
