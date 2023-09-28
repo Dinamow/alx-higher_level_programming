@@ -11,34 +11,53 @@ def find_peak(list_of_integers):
     if low > high:
         return None
 
-    def partition(array, low, high):
-        """helper func"""
+    def merge(arr, l, m, r):
+        n1 = m - l + 1
+        n2 = r - m
 
-        pivot = array[high]
+        L = [0] * (n1)
+        R = [0] * (n2)
 
-        i = low - 1
+        for i in range(0, n1):
+            L[i] = arr[l + i]
+    
+        for j in range(0, n2):
+            R[j] = arr[m + 1 + j]
 
-        for j in range(low, high):
-            if array[j] <= pivot:
+        i = 0
+        j = 0
+        k = l
+    
+        while i < n1 and j < n2:
+            if L[i] <= R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
 
-                i = i + 1
+        while i < n1:
+            arr[k] = L[i]
+            i += 1
+            k += 1
 
-                (array[i], array[j]) = (array[j], array[i])
+        while j < n2:
+            arr[k] = R[j]
+            j += 1
+            k += 1
 
-        (array[i + 1], array[high]) = (array[high], array[i + 1])
+    def mergeSort(arr, l, r):
+        """the sort alogrithm"""
+        if l < r:
 
-        return i + 1
+            m = l+(r-l)//2
+    
+            mergeSort(arr, l, m)
+            mergeSort(arr, m+1, r)
+            merge(arr, l, m, r)
+        return arr
 
-    def quickSort(array, low, high):
-        if low < high:
-
-            pi = partition(array, low, high)
-
-            quickSort(array, low, pi - 1)
-
-            quickSort(array, pi + 1, high)
-        return array
-
-    list_of_integers = quickSort(list_of_integers, low, high)
+    list_of_integers = mergeSort(list_of_integers, low, high)
 
     return list_of_integers[-1]
