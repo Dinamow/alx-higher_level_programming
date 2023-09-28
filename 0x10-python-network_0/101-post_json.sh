@@ -1,3 +1,3 @@
 #!/bin/bash
 #sends a JSON POST request, and displays the body of the response.
-curl -X POST -H "Content-Type: application/json" -d @$2 $1
+curl -X POST -H "Content-Type: application/json" -d -o @$2 $1
