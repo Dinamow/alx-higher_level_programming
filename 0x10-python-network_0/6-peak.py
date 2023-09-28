@@ -5,59 +5,52 @@
 def find_peak(list_of_integers):
     """the function find the peek"""
 
-    low = 0
-    high = len(list_of_integers) - 1
+    if isinstance(list_of_integers, int):
+        return list_of_integers
 
-    if low > high:
+    if list_of_integers is None or len(list_of_integers) == 0:
         return None
 
-    def merge(arr, less, m, r):
-        n1 = m - less + 1
-        n2 = r - m
+    length = len(list_of_integers)
 
-        L = [0] * (n1)
-        R = [0] * (n2)
+    if length == 1:
+        return list_of_integers[0]
 
-        for i in range(0, n1):
-            L[i] = arr[less + i]
+    if length == 2:
+        return list_of_integers[0] if list_of_integers[0] >\
+            list_of_integers[1] else list_of_integers[1]
 
-        for j in range(0, n2):
-            R[j] = arr[m + 1 + j]
+    def get_value(arr: list, index: int):
+        """get index value"""
 
-        i = 0
-        j = 0
-        k = less
-
-        while i < n1 and j < n2:
-            if L[i] <= R[j]:
-                arr[k] = L[i]
-                i += 1
+        if index == len(arr) - 1:
+            if arr[index] > arr[index - 1]:
+                return arr[index]
             else:
-                arr[k] = R[j]
-                j += 1
-            k += 1
+                return arr[index - 1]
 
-        while i < n1:
-            arr[k] = L[i]
-            i += 1
-            k += 1
+        x = arr[index]
 
-        while j < n2:
-            arr[k] = R[j]
-            j += 1
-            k += 1
+        if x < arr[index - 1]:
+            x = arr[index - 1]
+        elif x < arr[index + 1]:
+            x = arr[index + 1]
 
-    def mergeSort(arr, less, r):
-        """the sort alogrithm"""
-        if less < r:
+        return x
 
-            m = less+(r-less)//2
+    x = get_value(list_of_integers, 1)
 
-            mergeSort(arr, less, m)
-            mergeSort(arr, m+1, r)
-            merge(arr, less, m, r)
-        return arr
+    if length == 3:
+        return x
 
-    list_of_integers = mergeSort(list_of_integers, low, high)
+    new = []
 
-    return list_of_integers[-1]
+    new.append(x)
+
+    for i in range(4, length - 1, 3):
+        new.append(get_value(list_of_integers, i))
+
+    if length % 3 != 0:
+        new.append(list_of_integers[length - 1])
+
+    return (find_peak(new))
