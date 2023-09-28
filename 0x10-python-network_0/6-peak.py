@@ -5,8 +5,8 @@
 def find_peak(list_of_integers):
     """the function find the peek"""
 
-    if isinstance(list_of_integers, int):
-        return list_of_integers
+    if not isinstance(list_of_integers, list):
+        return None
 
     if list_of_integers is None or len(list_of_integers) == 0:
         return None
@@ -23,32 +23,33 @@ def find_peak(list_of_integers):
     def get_value(arr: list, index: int):
         """get index value"""
 
+        x = []
         if index == len(arr) - 1:
             if arr[index] > arr[index - 1]:
-                return arr[index]
+                x.append(arr[index])
+                return x
             else:
-                return arr[index - 1]
+                x.append(arr[index - 1])
+                return x
 
-        x = arr[index]
+        x.append(arr[index])
 
-        if x < arr[index - 1]:
-            x = arr[index - 1]
-        elif x < arr[index + 1]:
-            x = arr[index + 1]
+        if x[0] < arr[index - 1]:
+            x[0] = arr[index - 1]
+        elif x[0] < arr[index + 1]:
+            x[0] = arr[index + 1]
 
         return x
 
     x = get_value(list_of_integers, 1)
 
     if length == 3:
-        return x
+        return x[0]
 
-    new = []
-
-    new.append(x)
+    new = x
 
     for i in range(4, length - 1, 3):
-        new.append(get_value(list_of_integers, i))
+        new.append(get_value(list_of_integers, i)[0])
 
     if length % 3 != 0:
         new.append(list_of_integers[length - 1])
