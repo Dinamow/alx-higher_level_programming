@@ -11,23 +11,23 @@ def find_peak(list_of_integers):
     if low > high:
         return None
 
-    def merge(arr, l, m, r):
-        n1 = m - l + 1
+    def merge(arr, less, m, r):
+        n1 = m - less + 1
         n2 = r - m
 
         L = [0] * (n1)
         R = [0] * (n2)
 
         for i in range(0, n1):
-            L[i] = arr[l + i]
-    
+            L[i] = arr[less + i]
+
         for j in range(0, n2):
             R[j] = arr[m + 1 + j]
 
         i = 0
         j = 0
-        k = l
-    
+        k = less
+
         while i < n1 and j < n2:
             if L[i] <= R[j]:
                 arr[k] = L[i]
@@ -47,15 +47,15 @@ def find_peak(list_of_integers):
             j += 1
             k += 1
 
-    def mergeSort(arr, l, r):
+    def mergeSort(arr, less, r):
         """the sort alogrithm"""
-        if l < r:
+        if less < r:
 
-            m = l+(r-l)//2
-    
-            mergeSort(arr, l, m)
+            m = less+(r-less)//2
+
+            mergeSort(arr, less, m)
             mergeSort(arr, m+1, r)
-            merge(arr, l, m, r)
+            merge(arr, less, m, r)
         return arr
 
     list_of_integers = mergeSort(list_of_integers, low, high)
