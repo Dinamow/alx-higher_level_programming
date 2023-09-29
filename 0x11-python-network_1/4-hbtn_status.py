@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""Python script that fetches https://alx-intranet.hbtn.io/status
+"""sends a POST request to the passed URL
 """
 
 
 if __name__ == "__main__":
     import requests
-    import sys
 
-    url = sys.argv[1]
+    url = 'https://alx-intranet.hbtn.io/status'
 
     req = requests.get(url)
 
-    if req.status_code >= 400:
-        print(f"Error code: {req.status_code}")
-    else:
-        print(req.text)
+    print("Body response:")
+    print(f"\t- type: {type(req.text)}")
+    print(f"\t- content: {req.text}")
+    

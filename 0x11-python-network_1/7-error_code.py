@@ -5,11 +5,13 @@
 
 if __name__ == "__main__":
     import requests
+    import sys
 
-    url = 'https://alx-intranet.hbtn.io/status'
+    url = sys.argv[1]
 
     req = requests.get(url)
 
-    print("Body response:")
-    print(f"\t- type: {type(req.text)}")
-    print(f"\t- content: {req.text}")
+    if req.status_code >= 400:
+        print(f"Error code: {req.status_code}")
+    else:
+        print(req.text)
