@@ -11,7 +11,7 @@ def search_user(letter):
     response = requests.post(url, params=params)
     try:
         data = response.json()
-        if len(data) <= 0:
+        if len(data['id']) <= 0:
             print("No result")
         else:
             print(f"[{data['id']}] {data['name']}")
