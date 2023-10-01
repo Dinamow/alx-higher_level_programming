@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 .replace(':', '').replace('T', '').replace('Z', '')
         user_data =\
             sorted(user_data, key=lambda x: x['commit']['author']['date'])
-        for i in range(-1, -11, -1):
+        for i in range(10):
             dic = dict(user_data[i])
             print(dic['sha'] + ": " + dic['commit']['author']['name'])
     else:
