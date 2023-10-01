@@ -17,6 +17,9 @@ if __name__ == "__main__":
     if response.status_code == 200:
         user_data = response.json()
         user_id = user_data["id"]
-        print(user_id)
+        if user_id:
+            print(user_id)
+        else:
+            print("None")
     else:
         print("None")
