@@ -6,6 +6,10 @@ if __name__ == "__main__":
     import sys
     import requests
 
+    if len(sys.argv):
+        print("None")
+        exit()
+
     username = sys.argv[1]
     password = sys.argv[2]
     url = f"https://api.github.com/users/{username}"
@@ -15,4 +19,4 @@ if __name__ == "__main__":
         user_id = user_data["id"]
         print(user_id)
     else:
-        print(f"Error: {response.status_code}")
+        print("None")
