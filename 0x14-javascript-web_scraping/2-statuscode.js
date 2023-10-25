@@ -7,4 +7,3 @@ request(URL, (error, response, body) => {
   console.log(`code: ${response.statusCode}`);
   if (error) console.error(error);
 });
-

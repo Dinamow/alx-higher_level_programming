@@ -9,4 +9,3 @@ fs.writeFile(FILE_NAME, TEXT, 'utf8', (err) => {
     console.error(err);
   }
 });
-
